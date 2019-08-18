@@ -8,7 +8,7 @@ add_subdirectory(bin)
 add_subdirectory(examples)
 add_subdirectory(include)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Testing

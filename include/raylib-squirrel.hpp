@@ -352,9 +352,6 @@ inline void raylib_squirrel_defines(squall::VM& vm) {
 	table.set("NPT_3PATCH_HORIZONTAL", (int)NPT_3PATCH_HORIZONTAL);
 }
 
-/**
- * Adds raylib bindings to the given Squirrel VM.
- */
 void raylib_squirrel(squall::VM& vm) {
 	raylib_squirrel_functions(vm);
 	raylib_squirrel_structs(vm);

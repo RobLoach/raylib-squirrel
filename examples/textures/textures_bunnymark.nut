@@ -72,19 +72,7 @@ while (!WindowShouldClose()) {    // Detect window close button or ESC key
     // Draw
     //----------------------------------------------------------------------------------
     BeginDrawing()
-    local c = RAYWHITE
-
-        ClearBackground(c)
-
-        //for (i = 0; i < bunnies.len(); i += 1) {
-            // NOTE: When internal batch buffer limit is reached (MAX_BATCH_ELEMENTS),
-            // a draw call is launched and buffer starts being filled again;
-            // before issuing a draw call, updated vertex data from internal CPU buffer is send to GPU...
-            // Process of sending data is costly and it could happen that GPU data has not been completely
-            // processed for drawing while new data is tried to be sent (updating current in-use buffers)
-            // it could generates a stall and consequently a frame drop, limiting the number of drawn bunnies
-        //    DrawTexture(texBunny, bunnies[i].position.x, bunnies[i].position.y, bunnies[i].color)
-        //}
+        ClearBackground(RAYWHITE)
 
         foreach (bunny in bunnies) {
         	DrawTexture(texBunny, bunny.position.x, bunny.position.y, bunny.color)
