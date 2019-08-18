@@ -1,6 +1,6 @@
 # raylib-squirrel (Proof-of-Concept)
 
-[raylib](https://www.raylib.com/) bindings for [Squirrel](http://squirrel-lang.org).
+[raylib](https://www.raylib.com/) bindings for [Squirrel](http://squirrel-lang.org), using [Squall](https://github.com/jonigata/squall).
 
 ## Example
 
@@ -27,4 +27,15 @@ while (!WindowShouldClose())
 }
 
 CloseWindow()
+```
+
+## Build
+
+```
+git clone https://github.com/RobLoach/raylib-squirrel.git
+cd raylib-squirrel
+mkdir build
+cd build
+cmake ..
+make
 ```

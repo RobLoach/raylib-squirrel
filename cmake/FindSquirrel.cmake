@@ -4,7 +4,7 @@ if (NOT squirrel_FOUND)
   FetchContent_Declare(
     squirrel
     GIT_REPOSITORY https://github.com/albertodemichelis/squirrel.git
-    GIT_TAG 780e9c96b34d24d347c90756efa96f2927fcb641
+    GIT_TAG 1b25d4acda9e636cb7109629260a88badc58d884
   )
   FetchContent_GetProperties(squirrel)
   if (NOT squirrel_POPULATED)

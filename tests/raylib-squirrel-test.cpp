@@ -5,13 +5,15 @@
 #include <string>
 
 // Raylib
-#include <raylib.h>
+extern "C" {
+    #include <raylib.h>
+}
 
 // Squirrel VM
 #include "squall/squall_vmstd.hpp"
 
 // Raylib
-#include "raylib-squirrel.hpp"
+#include "../include/raylib-squirrel.hpp"
 
 TEST_CASE( "raylib-squirrel functions work", "[raylib-squirrel]" ) {
 
