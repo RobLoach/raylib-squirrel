@@ -7,7 +7,7 @@ if (NOT squirrel_FOUND)
     GIT_TAG 780e9c96b34d24d347c90756efa96f2927fcb641
   )
   FetchContent_GetProperties(squirrel)
-  if (NOT squirrel_POPULATED) # Have we downloaded raylib yet?
+  if (NOT squirrel_POPULATED)
     set(FETCHCONTENT_QUIET NO)
     FetchContent_Populate(squirrel)
     add_subdirectory(${squirrel_SOURCE_DIR} ${squirrel_BINARY_DIR})
