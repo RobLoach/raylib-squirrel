@@ -1,7 +1,7 @@
 #include <iostream>
 #include "raylib.h"
 #include "squall/squall_vmstd.hpp"
-#include "raylib-squirrel.hpp"
+#include "../include/raylib-squirrel.hpp"
 
 int main(int argc, char *argv[])
 {

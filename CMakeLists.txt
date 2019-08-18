@@ -4,14 +4,16 @@ project(raylib-squirrel)
 # Config options
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-include_directories(include)
-
 add_subdirectory(bin)
+add_subdirectory(examples)
+add_subdirectory(include)
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Testing
 include(CTest)
 enable_testing()
 if(BUILD_TESTING)
-  configure_file(${CMAKE_SOURCE_DIR}/cmake/CTestCustom.cmake ${CMAKE_BINARY_DIR})
   add_subdirectory(tests)
 endif()

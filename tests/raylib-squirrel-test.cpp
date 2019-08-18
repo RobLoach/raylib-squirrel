@@ -27,5 +27,5 @@ TEST_CASE( "raylib-squirrel functions work", "[raylib-squirrel]" ) {
 
     // Colors
     vm.dostring("function colorTest() {return RAYWHITE.r;}");
-    CHECK(vm.call<int>("colorTest") == 245);
+    CHECK(vm.call<int>("colorTest") == RAYWHITE.r);
 }
