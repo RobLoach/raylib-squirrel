@@ -7,7 +7,9 @@ extern "C" {
 }
 #include "squall/squall_vm.hpp"
 #include "squall/squall_klass.hpp"
-#include "squall/squall_table.hpp"
+#include "squall/squall_table_base.hpp"
+
+#include <string>
 
 inline void raylib_squirrel_functions(squall::VM& vm) {
 	vm.defun("IsWindowReady", &IsWindowReady);
@@ -20,7 +22,6 @@ inline void raylib_squirrel_functions(squall::VM& vm) {
 	vm.defun("EndDrawing", &EndDrawing);
 	vm.defun("ClearBackground", &ClearBackground);
 	vm.defun("CloseWindow", &CloseWindow);
-
 	vm.defun("IsMouseButtonDown", IsMouseButtonDown);
 	vm.defun("DrawRectangle", DrawRectangle);
 	vm.defun("LoadTexture", LoadTexture);
@@ -38,17 +39,17 @@ inline void raylib_squirrel_structs(squall::VM& vm) {
     color.var("b", &Color::b);
     color.var("a", &Color::a);
 
-    // squall::Klass<Texture2D> texture2d(vm, "Texture2D");
-    // texture2d.var("id", &Texture2D::id);
-    // texture2d.var("width", &Texture2D::width);
-    // texture2d.var("height", &Texture2D::height);
-    // texture2d.var("mipmaps", &Texture2D::mipmaps);
-    // texture2d.var("format", &Texture2D::format);
+    squall::Klass<Texture2D> texture2d(vm, "Texture2D");
+    texture2d.var("id", &Texture2D::id);
+    texture2d.var("width", &Texture2D::width);
+    texture2d.var("height", &Texture2D::height);
+    texture2d.var("mipmaps", &Texture2D::mipmaps);
+    texture2d.var("format", &Texture2D::format);
 }
 
 inline void raylib_squirrel_defines(squall::VM& vm) {
+
     squall::TableBase table = vm.root_table();
-    //squall::Table table(vm);
 
     // Colors
 	table.set("LIGHTGRAY", LIGHTGRAY);
@@ -352,9 +353,10 @@ inline void raylib_squirrel_defines(squall::VM& vm) {
 	table.set("NPT_3PATCH_HORIZONTAL", (int)NPT_3PATCH_HORIZONTAL);
 }
 
-void raylib_squirrel(squall::VM& vm) {
-	raylib_squirrel_functions(vm);
+void raylib_squirrel(squall::VMStd& vm) {
+
 	raylib_squirrel_structs(vm);
+	raylib_squirrel_functions(vm);
 	raylib_squirrel_defines(vm);
 };
 
