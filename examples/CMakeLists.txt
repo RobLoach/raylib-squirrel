@@ -1,5 +1,5 @@
 # Get the sources together
-set(example_dirs core)
+set(example_dirs core textures)
 set(example_sources)
 set(example_resources)
 
